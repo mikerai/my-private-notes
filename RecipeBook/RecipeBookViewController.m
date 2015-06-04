@@ -42,6 +42,25 @@
     return self;
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+- (void) addBlurEffect {
+    // Add blur view
+    CGRect bounds = self.navigationController.navigationBar.bounds;
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+    visualEffectView.frame = bounds;
+    visualEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.navigationController.navigationBar addSubview:visualEffectView];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    [self.navigationController.navigationBar sendSubviewToBack:visualEffectView];
+    
+    // Here you can add visual effects to any UIView control.
+    // Replace custom view with navigation bar in above code to add effects to custom view.
+}
+
 
 - (void)viewDidLoad
 {
@@ -51,12 +70,15 @@
                                              selector:@selector(refreshTable:)
                                                  name:@"refreshTable"
                                                object:nil];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 - (void)refreshTable:(NSNotification *) notification

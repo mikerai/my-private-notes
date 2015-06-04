@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface RecipeDetailViewController : UIViewController
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6F65DA23-BF10-4651-A915-129303BBC297</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RecipeBook</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C9DFD33CD12C53FE3E7F320D5C253EE51CBA8ECE</key>
+		<string>https://bitbucket.org/mikerai/my-private-notes</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RecipeBook.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C9DFD33CD12C53FE3E7F320D5C253EE51CBA8ECE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/mikerai/my-private-notes</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C9DFD33CD12C53FE3E7F320D5C253EE51CBA8ECE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C9DFD33CD12C53FE3E7F320D5C253EE51CBA8ECE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>My%20Private%20Notes</string>
+		</dict>
+	</array>
+</dict>
+</plist>

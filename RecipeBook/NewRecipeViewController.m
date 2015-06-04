@@ -18,10 +18,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *prepTimeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ingredientsTextField;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UIButton *takeButton;
 
 @end
 
 @implementation NewRecipeViewController
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,20 +36,72 @@
     return self;
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+- (void) addBlurEffect {
+    // Add blur view
+    CGRect bounds = self.navigationController.navigationBar.bounds;
+    UIVisualEffectView *visualEffectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+    visualEffectView.frame = bounds;
+    visualEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.navigationController.navigationBar addSubview:visualEffectView];
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    [self.navigationController.navigationBar sendSubviewToBack:visualEffectView];
+    
+    // Here you can add visual effects to any UIView control.
+    // Replace custom view with navigation bar in above code to add effects to custom view.
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     _nameTextField.delegate = self;
     _prepTimeTextField.delegate = self;
     _ingredientsTextField.delegate = self;
+    
+    self.addButton.layer.borderWidth = 1.0f;
+    self.takeButton.layer.borderWidth = 1.0f;
+    
+    self.addButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.takeButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    self.addButton.layer.cornerRadius = 0.0f;
+    self.takeButton.layer.cornerRadius = 0.0f;
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                              message:@"Device has no camera"
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+        
+    }
+    
+    UIVisualEffect *blurEffect;
+    blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    
+    UIVisualEffectView *visualEffectView;
+    visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    
+    visualEffectView.frame = _recipeImageView.bounds;
+    [_recipeImageView addSubview:visualEffectView];
+    
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;
     
 }
 
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +117,18 @@
     if (indexPath.row == 0) {
         [self showPhotoLibary];
     }
+}
+
+- (IBAction)selectPhoto:(UIButton *)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+    
+    
 }
 
 - (IBAction)takePhoto:(UIButton *)sender {
