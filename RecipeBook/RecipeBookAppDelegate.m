@@ -19,7 +19,7 @@
     [Parse setApplicationId:@"pVYMfoudggC6aSnKGHTEb4TURL8IMSLpvScYLrw9"
                   clientKey:@"Dg4KuVEJSgt8fhRxXuP7IvwkccVmwpdWms6MKpdm"];
     
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.12 green:0.14 blue:0.16 alpha:1]];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
@@ -27,7 +27,7 @@
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 0);
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           [UIColor colorWithRed:0.12 green:0.14 blue:0.16 alpha:1], NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"HelveticaNeue" size:20.0], NSFontAttributeName, nil]];
 

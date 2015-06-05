@@ -16,8 +16,7 @@
 - (IBAction)cancel:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *prepTimeTextField;
-@property (weak, nonatomic) IBOutlet UITextField *ingredientsTextField;
+@property (weak, nonatomic) IBOutlet UITextView *ingredientsTextField;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *takeButton;
 
@@ -34,11 +33,6 @@
         // Custom initialization
     }
     return self;
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
 }
 
 - (void) addBlurEffect {
@@ -60,42 +54,58 @@
     [super viewDidLoad];
     
     _nameTextField.delegate = self;
-    _prepTimeTextField.delegate = self;
     _ingredientsTextField.delegate = self;
     
     self.addButton.layer.borderWidth = 1.0f;
     self.takeButton.layer.borderWidth = 1.0f;
     
-    self.addButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.takeButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.addButton.layer.borderColor = [UIColor colorWithRed:0.12 green:0.14 blue:0.16 alpha:1].CGColor;
+    self.takeButton.layer.borderColor = [UIColor colorWithRed:0.12 green:0.14 blue:0.16 alpha:1].CGColor;
     
-    self.addButton.layer.cornerRadius = 0.0f;
-    self.takeButton.layer.cornerRadius = 0.0f;
+    self.addButton.layer.cornerRadius = 5.0f;
+    self.takeButton.layer.cornerRadius = 5.0f;
     
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+        /*UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                               message:@"Device has no camera"
                                                              delegate:nil
                                                     cancelButtonTitle:@"OK"
                                                     otherButtonTitles: nil];
         
-        [myAlertView show];
+        [myAlertView show];*/
+        
+        self.takeButton.hidden = YES;
         
     }
     
-    UIVisualEffect *blurEffect;
+    /*UIVisualEffect *blurEffect;
     blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     
     UIVisualEffectView *visualEffectView;
     visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     
     visualEffectView.frame = _recipeImageView.bounds;
-    [_recipeImageView addSubview:visualEffectView];
+    [_recipeImageView addSubview:visualEffectView];*/
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
         self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    /*UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg1.jpg"]];
+    [tempImageView setFrame:self.tableView.frame];
+    
+    self.tableView.backgroundView = tempImageView;*/
+    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
+    UIView *patternView = [[UIView alloc] initWithFrame:self.tableView.frame];
+    patternView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg1.jpg"]];
+    patternView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.tableView.backgroundView = patternView;
+    
+    [[self.ingredientsTextField layer] setBorderColor:[[UIColor colorWithRed:0.12 green:0.14 blue:0.16 alpha:1] CGColor]];
+    [[self.ingredientsTextField layer] setBorderWidth:1.0f];
+    //[[self.ingredientsTextField layer] setCornerRadius:5.0];
 }
 
 -(void)viewDidLayoutSubviews
@@ -123,7 +133,7 @@
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
-    picker.allowsEditing = YES;
+    picker.allowsEditing = NO;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentViewController:picker animated:YES completion:NULL];
@@ -133,12 +143,29 @@
 
 - (IBAction)takePhoto:(UIButton *)sender {
     
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                              message:@"Device has no camera"
+                                                             delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles: nil];
+        
+        [myAlertView show];
+    
+    }
+    
+    else {
+    
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     
     [self presentViewController:picker animated:YES completion:NULL];
+        
+    }
     
 }
 
@@ -169,7 +196,6 @@
     // Create PFObject with recipe information
     PFObject *recipe = [PFObject objectWithClassName:@"Recipe"];
     [recipe setObject:_nameTextField.text forKey:@"name"];
-    [recipe setObject:_prepTimeTextField.text forKey:@"prepTime"];
     
     NSArray *ingredients = [_ingredientsTextField.text componentsSeparatedByString: @","];
     [recipe setObject:ingredients forKey:@"ingredients"];
@@ -192,7 +218,7 @@
         
         if (!error) {
             // Show success message
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved the recipe" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload Complete" message:@"Successfully saved the note" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
             
             // Notify table view to reload the recipes from Parse cloud
@@ -217,7 +243,6 @@
 - (void)viewDidUnload {
     [self setRecipeImageView:nil];
     [self setNameTextField:nil];
-    [self setPrepTimeTextField:nil];
     [self setIngredientsTextField:nil];
     [super viewDidUnload];
 }

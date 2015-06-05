@@ -42,11 +42,6 @@
     return self;
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
 - (void) addBlurEffect {
     // Add blur view
     CGRect bounds = self.navigationController.navigationBar.bounds;
@@ -169,7 +164,6 @@
         Recipe *recipe = [[Recipe alloc] init];
         recipe.name = [object objectForKey:@"name"];
         recipe.imageFile = [object objectForKey:@"imageFile"];
-        recipe.prepTime = [object objectForKey:@"prepTime"];
         recipe.ingredients = [object objectForKey:@"ingredients"];
         destViewController.recipe = recipe;
         

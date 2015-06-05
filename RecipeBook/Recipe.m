@@ -11,7 +11,6 @@
 @implementation Recipe
 
 @synthesize name;
-@synthesize prepTime;
 @synthesize imageFile;
 @synthesize ingredients;
 

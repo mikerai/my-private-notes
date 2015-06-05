@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34517B941B2127CF00D3C065 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34517B931B2127CF00D3C065 /* bg1.jpg */; };
+		34517B961B2145E500D3C065 /* bg1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34517B951B2145E500D3C065 /* bg1@2x.jpg */; };
+		34517B9B1B21589300D3C065 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34517B9A1B21589300D3C065 /* LocalAuthentication.framework */; };
+		34517BA01B216AB300D3C065 /* IdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34517B9F1B216AB300D3C065 /* IdViewController.m */; };
+		34517BA41B216B1E00D3C065 /* EHFAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34517BA21B216B1E00D3C065 /* EHFAuthenticator.m */; };
 		F419149E158D558600E54887 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F419149D158D558600E54887 /* RecipeDetailViewController.m */; };
 		F447242715D78F07004A8C72 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = F447242615D78F07004A8C72 /* Recipe.m */; };
 		F447242B15D7B22E004A8C72 /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = F447242915D7B22D004A8C72 /* photo-frame.png */; };
@@ -36,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34517B931B2127CF00D3C065 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
+		34517B951B2145E500D3C065 /* bg1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg1@2x.jpg"; sourceTree = "<group>"; };
+		34517B9A1B21589300D3C065 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		34517B9E1B216AB300D3C065 /* IdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdViewController.h; sourceTree = "<group>"; };
+		34517B9F1B216AB300D3C065 /* IdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdViewController.m; sourceTree = "<group>"; };
+		34517BA21B216B1E00D3C065 /* EHFAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHFAuthenticator.m; sourceTree = "<group>"; };
+		34517BA31B216B1E00D3C065 /* EHFAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHFAuthenticator.h; sourceTree = "<group>"; };
 		F419149C158D558600E54887 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		F419149D158D558600E54887 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		F447242515D78F07004A8C72 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
@@ -78,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34517B9B1B21589300D3C065 /* LocalAuthentication.framework in Frameworks */,
 				F4792A0917A3FF39005ABA86 /* MobileCoreServices.framework in Frameworks */,
 				F4792A1117A3FF50005ABA86 /* SystemConfiguration.framework in Frameworks */,
 				F4792A0D17A3FF45005ABA86 /* Security.framework in Frameworks */,
@@ -96,9 +109,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34517BA11B216AC700D3C065 /* ID */ = {
+			isa = PBXGroup;
+			children = (
+				34517BA31B216B1E00D3C065 /* EHFAuthenticator.h */,
+				34517BA21B216B1E00D3C065 /* EHFAuthenticator.m */,
+				34517B9E1B216AB300D3C065 /* IdViewController.h */,
+				34517B9F1B216AB300D3C065 /* IdViewController.m */,
+			);
+			name = ID;
+			sourceTree = "<group>";
+		};
 		F47929FD17A3FEA7005ABA86 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				34517B951B2145E500D3C065 /* bg1@2x.jpg */,
+				34517B931B2127CF00D3C065 /* bg1.jpg */,
 				F4DAE75B17B74606006A879A /* add-photo-placeholder.png */,
 				F46F6AF817A8D31F00EA6224 /* Default-568h@2x.png */,
 				F4792A1217A40C64005ABA86 /* placeholder.jpg */,
@@ -128,6 +154,7 @@
 		F4AA6C2A1589A2DF0093D97E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34517B9A1B21589300D3C065 /* LocalAuthentication.framework */,
 				F4792A1017A3FF50005ABA86 /* SystemConfiguration.framework */,
 				F4792A0C17A3FF45005ABA86 /* Security.framework */,
 				F4792A0A17A3FF41005ABA86 /* QuartzCore.framework */,
@@ -148,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				F4DAE75D17B76555006A879A /* MBProgressHUB */,
+				34517BA11B216AC700D3C065 /* ID */,
 				F4AA6C3A1589A2DF0093D97E /* RecipeBookAppDelegate.h */,
 				F4AA6C3B1589A2DF0093D97E /* RecipeBookAppDelegate.m */,
 				F4AA6C3D1589A2DF0093D97E /* MainStoryboard.storyboard */,
@@ -246,11 +274,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34517B941B2127CF00D3C065 /* bg1.jpg in Resources */,
 				F4AA6C361589A2DF0093D97E /* InfoPlist.strings in Resources */,
 				F4AA6C3F1589A2DF0093D97E /* MainStoryboard.storyboard in Resources */,
 				F447242B15D7B22E004A8C72 /* photo-frame.png in Resources */,
 				F447242C15D7B22E004A8C72 /* photo-frame@2x.png in Resources */,
 				F4792A1317A40C64005ABA86 /* placeholder.jpg in Resources */,
+				34517B961B2145E500D3C065 /* bg1@2x.jpg in Resources */,
 				F46F6AF917A8D31F00EA6224 /* Default-568h@2x.png in Resources */,
 				F4DAE75C17B74606006A879A /* add-photo-placeholder.png in Resources */,
 			);
@@ -263,7 +293,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34517BA41B216B1E00D3C065 /* EHFAuthenticator.m in Sources */,
 				F4AA6C381589A2DF0093D97E /* main.m in Sources */,
+				34517BA01B216AB300D3C065 /* IdViewController.m in Sources */,
 				F4AA6C3C1589A2DF0093D97E /* RecipeBookAppDelegate.m in Sources */,
 				F4AA6C421589A2DF0093D97E /* RecipeBookViewController.m in Sources */,
 				F419149E158D558600E54887 /* RecipeDetailViewController.m in Sources */,

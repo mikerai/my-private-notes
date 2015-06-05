@@ -15,7 +15,6 @@
 @implementation RecipeDetailViewController
 
 @synthesize recipePhoto;
-@synthesize prepTimeLabel;
 @synthesize ingredientTextView;
 @synthesize recipe;
 
@@ -27,11 +26,6 @@
         // Custom initialization
     }
     return self;
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
 }
 
 - (void) addBlurEffect {
@@ -53,7 +47,6 @@
     [super viewDidLoad];
     
     self.title = recipe.name;
-    self.prepTimeLabel.text = recipe.prepTime;
     self.recipePhoto.file = recipe.imageFile;
     
     NSMutableString *ingredientText = [NSMutableString string];
@@ -76,7 +69,6 @@
 - (void)viewDidUnload
 {
     [self setRecipePhoto:nil];
-    [self setPrepTimeLabel:nil];
     [self setIngredientTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
