@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
+#import "LoginVC.h"
 
 @interface RecipeBookViewController : PFQueryTableViewController
+
+-(IBAction)logOut:(id)sender;
 
 @end

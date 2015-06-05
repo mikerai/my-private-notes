@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		34517B941B2127CF00D3C065 /* bg1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34517B931B2127CF00D3C065 /* bg1.jpg */; };
 		34517B961B2145E500D3C065 /* bg1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34517B951B2145E500D3C065 /* bg1@2x.jpg */; };
-		34517B9B1B21589300D3C065 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34517B9A1B21589300D3C065 /* LocalAuthentication.framework */; };
-		34517BA01B216AB300D3C065 /* IdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34517B9F1B216AB300D3C065 /* IdViewController.m */; };
-		34517BA41B216B1E00D3C065 /* EHFAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 34517BA21B216B1E00D3C065 /* EHFAuthenticator.m */; };
+		8B3E65E11B21FC9F0073D8AC /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3E65E01B21FC9F0073D8AC /* LoginVC.m */; };
+		8B3E65E31B21FD490073D8AC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3E65E21B21FD490073D8AC /* Accounts.framework */; };
+		8B3E65E51B21FD700073D8AC /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3E65E41B21FD700073D8AC /* libsqlite3.0.dylib */; };
+		8B3E65E71B21FD7D0073D8AC /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3E65E61B21FD7D0073D8AC /* AdSupport.framework */; };
+		8B3E65EB1B21FDFC0073D8AC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3E65EA1B21FDFC0073D8AC /* FacebookSDK.framework */; };
+		8B3E65EC1B21FE1A0073D8AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4792A0817A3FF39005ABA86 /* MobileCoreServices.framework */; };
+		8B3E65EE1B21FFB10073D8AC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3E65ED1B21FFB10073D8AC /* Social.framework */; };
+		8B3E65F01B2204490073D8AC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3E65EF1B2204490073D8AC /* iAd.framework */; };
 		F419149E158D558600E54887 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F419149D158D558600E54887 /* RecipeDetailViewController.m */; };
 		F447242715D78F07004A8C72 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = F447242615D78F07004A8C72 /* Recipe.m */; };
 		F447242B15D7B22E004A8C72 /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = F447242915D7B22D004A8C72 /* photo-frame.png */; };
@@ -22,7 +27,6 @@
 		F4792A0317A3FF1A005ABA86 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4792A0217A3FF1A005ABA86 /* CFNetwork.framework */; };
 		F4792A0517A3FF27005ABA86 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4792A0417A3FF27005ABA86 /* CoreLocation.framework */; };
 		F4792A0717A3FF32005ABA86 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F4792A0617A3FF32005ABA86 /* libz.1.1.3.dylib */; };
-		F4792A0917A3FF39005ABA86 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4792A0817A3FF39005ABA86 /* MobileCoreServices.framework */; };
 		F4792A0B17A3FF41005ABA86 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4792A0A17A3FF41005ABA86 /* QuartzCore.framework */; };
 		F4792A0D17A3FF45005ABA86 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4792A0C17A3FF45005ABA86 /* Security.framework */; };
 		F4792A1117A3FF50005ABA86 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4792A1017A3FF50005ABA86 /* SystemConfiguration.framework */; };
@@ -43,11 +47,14 @@
 /* Begin PBXFileReference section */
 		34517B931B2127CF00D3C065 /* bg1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg1.jpg; sourceTree = "<group>"; };
 		34517B951B2145E500D3C065 /* bg1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg1@2x.jpg"; sourceTree = "<group>"; };
-		34517B9A1B21589300D3C065 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
-		34517B9E1B216AB300D3C065 /* IdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdViewController.h; sourceTree = "<group>"; };
-		34517B9F1B216AB300D3C065 /* IdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdViewController.m; sourceTree = "<group>"; };
-		34517BA21B216B1E00D3C065 /* EHFAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHFAuthenticator.m; sourceTree = "<group>"; };
-		34517BA31B216B1E00D3C065 /* EHFAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHFAuthenticator.h; sourceTree = "<group>"; };
+		8B3E65DF1B21FC9F0073D8AC /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		8B3E65E01B21FC9F0073D8AC /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		8B3E65E21B21FD490073D8AC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		8B3E65E41B21FD700073D8AC /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		8B3E65E61B21FD7D0073D8AC /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8B3E65EA1B21FDFC0073D8AC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../../../Desktop/ParsePlatform-LoginAndSignUpTutorial-0710943/FacebookSDK.framework"; sourceTree = "<group>"; };
+		8B3E65ED1B21FFB10073D8AC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8B3E65EF1B2204490073D8AC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		F419149C158D558600E54887 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		F419149D158D558600E54887 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		F447242515D78F07004A8C72 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
@@ -90,8 +97,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34517B9B1B21589300D3C065 /* LocalAuthentication.framework in Frameworks */,
-				F4792A0917A3FF39005ABA86 /* MobileCoreServices.framework in Frameworks */,
+				8B3E65F01B2204490073D8AC /* iAd.framework in Frameworks */,
+				8B3E65EE1B21FFB10073D8AC /* Social.framework in Frameworks */,
+				8B3E65EC1B21FE1A0073D8AC /* MobileCoreServices.framework in Frameworks */,
+				8B3E65EB1B21FDFC0073D8AC /* FacebookSDK.framework in Frameworks */,
+				8B3E65E71B21FD7D0073D8AC /* AdSupport.framework in Frameworks */,
+				8B3E65E51B21FD700073D8AC /* libsqlite3.0.dylib in Frameworks */,
+				8B3E65E31B21FD490073D8AC /* Accounts.framework in Frameworks */,
 				F4792A1117A3FF50005ABA86 /* SystemConfiguration.framework in Frameworks */,
 				F4792A0D17A3FF45005ABA86 /* Security.framework in Frameworks */,
 				F4792A0B17A3FF41005ABA86 /* QuartzCore.framework in Frameworks */,
@@ -112,10 +124,8 @@
 		34517BA11B216AC700D3C065 /* ID */ = {
 			isa = PBXGroup;
 			children = (
-				34517BA31B216B1E00D3C065 /* EHFAuthenticator.h */,
-				34517BA21B216B1E00D3C065 /* EHFAuthenticator.m */,
-				34517B9E1B216AB300D3C065 /* IdViewController.h */,
-				34517B9F1B216AB300D3C065 /* IdViewController.m */,
+				8B3E65DF1B21FC9F0073D8AC /* LoginVC.h */,
+				8B3E65E01B21FC9F0073D8AC /* LoginVC.m */,
 			);
 			name = ID;
 			sourceTree = "<group>";
@@ -154,7 +164,12 @@
 		F4AA6C2A1589A2DF0093D97E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				34517B9A1B21589300D3C065 /* LocalAuthentication.framework */,
+				8B3E65EF1B2204490073D8AC /* iAd.framework */,
+				8B3E65ED1B21FFB10073D8AC /* Social.framework */,
+				8B3E65EA1B21FDFC0073D8AC /* FacebookSDK.framework */,
+				8B3E65E61B21FD7D0073D8AC /* AdSupport.framework */,
+				8B3E65E41B21FD700073D8AC /* libsqlite3.0.dylib */,
+				8B3E65E21B21FD490073D8AC /* Accounts.framework */,
 				F4792A1017A3FF50005ABA86 /* SystemConfiguration.framework */,
 				F4792A0C17A3FF45005ABA86 /* Security.framework */,
 				F4792A0A17A3FF41005ABA86 /* QuartzCore.framework */,
@@ -293,14 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34517BA41B216B1E00D3C065 /* EHFAuthenticator.m in Sources */,
 				F4AA6C381589A2DF0093D97E /* main.m in Sources */,
-				34517BA01B216AB300D3C065 /* IdViewController.m in Sources */,
 				F4AA6C3C1589A2DF0093D97E /* RecipeBookAppDelegate.m in Sources */,
 				F4AA6C421589A2DF0093D97E /* RecipeBookViewController.m in Sources */,
 				F419149E158D558600E54887 /* RecipeDetailViewController.m in Sources */,
 				F447242715D78F07004A8C72 /* Recipe.m in Sources */,
 				F4DAE75A17B698FA006A879A /* NewRecipeViewController.m in Sources */,
+				8B3E65E11B21FC9F0073D8AC /* LoginVC.m in Sources */,
 				F4DAE76017B7656C006A879A /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +421,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/MiguelAngel/Desktop,
+					"/Users/MiguelAngel/Desktop/ParsePlatform-LoginAndSignUpTutorial-0710943",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RecipeBook/RecipeBook-Prefix.pch";
@@ -426,7 +442,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/MiguelAngel/Desktop,
+					"/Users/MiguelAngel/Desktop/ParsePlatform-LoginAndSignUpTutorial-0710943",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RecipeBook/RecipeBook-Prefix.pch";

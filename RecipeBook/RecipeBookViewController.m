@@ -170,5 +170,16 @@
     }
 }
 
+-(IBAction)logOut:(id)sender {
+    
+    [PFUser logOut];
+    
+    NSLog(@"User logged out from the table view");
+    
+    //[self performSegueWithIdentifier:@"CustomSegue" sender:self];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 
 @end

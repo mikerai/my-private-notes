@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 #import <QuartzCore/QuartzCore.h>
+#import <iAd/iAd.h>
 
-@interface RecipeDetailViewController : UIViewController
+@interface RecipeDetailViewController : UIViewController <ADBannerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet PFImageView *recipePhoto;
 @property (weak, nonatomic) IBOutlet UILabel *prepTimeLabel;
